@@ -16,7 +16,7 @@ function ListItem({ movies }) {
       dataFns = format(new Date(releaseDate), 'MMMM d, yyyy');
     }
 
-    const textOverview = cutText(overview, 280);
+    const textOverview = cutText(overview, 80);
 
     return (
       <Item

@@ -1,13 +1,23 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-
 .container {
     max-width: 1010px;
     margin: 0 auto;
     min-width: 320px;
+  
     height: auto;
     background-color: #ffffff;
+  }
+
+  .container h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: grey;
+  }
+  .spiner {
+    margin: 10% auto;
+    display: block;
   }
