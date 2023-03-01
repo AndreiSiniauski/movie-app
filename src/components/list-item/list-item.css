@@ -2,5 +2,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 20px
+  margin-top: 20px;
+}
+
+.ant-alert {
+  margin-left: 2.5%;
+  margin-top: 20px;
+  width:95%;
+  text-align: center;
 }

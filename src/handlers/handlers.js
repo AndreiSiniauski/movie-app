@@ -20,4 +20,8 @@ function transformMovies(result) {
   };
 }
 
-export { transformDate, transformMovies };
+function transformIDSession(result) {
+  return { sessionId: result.guest_session_id };
+}
+
+export { transformDate, transformMovies, transformIDSession };

@@ -1,87 +1,111 @@
 .card {
-    position: relative;
-    width: 454px!important;
-    height: 281px;
-    filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
-    margin: 0 13px;
-    margin-bottom: 20px;
-    overflow: hidden;
-  }
+  position: relative;
+  width: 454px !important;
+  height: 281px;
+  filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
+  margin: 0 13px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.ant-card-body {
+  display: flex;
+  padding: 5px !important;
+}
+
+.card__img {
+  width: 183px;
+  height: 270px;
+  flex-shrink: 0;
+}
+
+.card__img img {
+  width: 100%;
+  height: 100%;
+}
+.card__content {
+  padding: 10px 10px 0 10px;
+}
+.card__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__movie-title {
+  font-size: 20px !important;
+  line-height: 28px !important;
+}
+.card__release-date {
+  display: block;
+}
+
+.card__reiting {
+  flex-shrink: 0;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  line-height: 22px;
+  border-radius: 50%;
+  padding-top: 2px;
+}
+.card__reiting.max {
+  border: 2px solid #66e900;
+}
+.card__reiting.norm {
+  border: 2px solid #e9d100;
+}
+.card__reiting.poor {
+  border: 2px solid #e97e00;
+}
+.card__reiting.low {
+  border: 2px solid #e90000;
+}
+
+.ant-tag {
+  margin-top: 7px;
+}
+.card__overview {
+  display: block;
+  margin-top: 7px;
+  font-size: 12px;
+}
+
+@media (max-width: 480px) {
   .ant-card-body {
-    display: flex;
-    padding: 5px!important;
-  }
-  
-  .card__img {
-    width: 183px;
-    height: 270px;
-    flex-shrink: 0;
-  }
-  
-  .card__img img {
-    width: 100%;
-    height: 100%;
-  }
-  .card__content {
-    padding: 10px 20px 0 20px;
-  }
-  .card__header {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .card__movie-title {
-    font-size: 20px!important;
-    line-height: 28px!important;
-  }
-  .card__release-date {
     display: block;
   }
-  .ant-tag {
-    margin-top: 7px;
+  .card {
+    min-width: auto;
+    height: 245px;
+    margin-bottom: 20px;
+    width: 347px !important;
+  }
+
+  .card__img {
+    width: 60px;
+    height: 91px;
+    top: 6px;
+    left: 10px;
+    position: absolute;
+  }
+
+  .card__content {
+    padding: 4px 10px 0 10px;
+  }
+
+  .card__header,
+  .card__genres,
+  .card__release-date {
+    margin-left: 73px;
+  }
+  .card__rate {
+    right: 10px;
+    margin-left: 26%;
   }
   .card__overview {
-    display: block;
-    margin-top: 7px;
-    font-size: 12px;
+    margin-top: 10px;
   }
-
-  @media (max-width: 480px) {
-    .ant-card-body {
-      display: block;
-    }
-    .card {
-      min-width: auto;
-      height: 245px;
-      margin-bottom: 20px;
-      width: 347px!important;
-    }
-  
-    .card__img {
-      width: 60px;
-      height: 91px;
-      top: 6px;
-      left: 10px;
-      position: absolute;
-    }
-  
-    .card__content {
-      padding: 4px 10px 0 10px;
-
-    }
-
-    .card__header,
-    .card__genres,
-    .card__release-date {
-      margin-left: 73px;
-    }
-    .card__rate {
-      right: 10px;
-    }
-    .card__overview {
-      margin-top: 10px;
-    }
-    h4.ant-typography {
-      line-height: 0.9;
-    }
+  h4.ant-typography {
+    line-height: 0.9;
   }
+}
