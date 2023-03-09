@@ -1,19 +1,30 @@
-import PropTypes from 'prop-types';
+import React from 'react';
 import format from 'date-fns/format';
 import { Alert } from 'antd';
 
 import './list-item.css';
 import cutText from '../../handlers/cutText';
-import Item from '../item';
-import { transformDate } from '../../handlers/handlers';
+import Item from '../item/item';
+interface Movie {
+  id: number;
+  originalTitle: string;
+  posterPath: string;
+  overview: string;
+  releaseDate: string;
+  rating: number;
+  movieGenre: number[];
+  voteAverage: number;
+}
 
-function ListItem({ movies }) {
-  const elements = movies.map((el) => {
-    const newEl = transformDate(el);
-    const { id, originalTitle, posterPath, overview, releaseDate, rating, movieGenre, voteAverage } = newEl;
+interface ListItemProps {
+  movies: Movie[];
+}
+const ListItem: React.FC<ListItemProps> = ({ movies }) => {
+  const elements = movies.map((movie) => {
+    const newMovie = movie;
+    const { id, originalTitle, posterPath, overview, releaseDate, rating, movieGenre, voteAverage } = newMovie;
     let dataFns = 'Unknown date';
-    let vote = voteAverage.toFixed(1);
-
+    let vote = Number(Number(voteAverage).toFixed(1));
     if (releaseDate) {
       dataFns = format(new Date(releaseDate), 'MMMM d, yyyy');
     }
@@ -21,6 +32,7 @@ function ListItem({ movies }) {
     const textOverview = cutText(overview, 130);
 
     return (
+      // eslint-disable-next-line react/jsx-filename-extension
       <Item
         key={id}
         title={originalTitle}
@@ -36,14 +48,6 @@ function ListItem({ movies }) {
   });
 
   return movies.length > 0 ? <div className="list-item">{elements}</div> : <Alert message="Not found..." />;
-}
-
-ListItem.defaultProps = {
-  movies: [],
-};
-
-ListItem.propTypes = {
-  movies: PropTypes.arrayOf(PropTypes.objectOf),
 };
 
 export default ListItem;
